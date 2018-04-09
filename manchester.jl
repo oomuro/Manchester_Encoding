@@ -19,7 +19,7 @@ function manchester()
     man_1 = [-1, -1, 1, 1]
 
     for i in 1:16
-        a = (temp + twos*(i-1))
+        a = (temp + twos * (i - 1))
         append!(x_bound, a)
         if bit[i] == 0
             append!(y_bound, man_0)
@@ -31,12 +31,13 @@ function manchester()
     man = stairs(x_bound, y_bound,
                     width=60,
                     height=5,
-                    xlim=[0,40],
-                    ylim=[-1,1],
+                    xlim=[0, 40],
+                    ylim=[-1, 1],
                     border=:bold,
                     title="Manchester Encoding",
                     color=:red,
-                    grid=false);
+                    grid=false,
+                    canvas=DotCanvas);
     print(man)
 end
 
@@ -91,7 +92,8 @@ function diff_manchester()
                     border=:bold,
                     title="Differential Manchester Encoding",
                     color=:red,
-                    grid=false);
+                    grid=false,
+                    canvas=DotCanvas);
     print(man)
 end
 
