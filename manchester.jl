@@ -29,9 +29,9 @@ function manchester()
     end
 
     man = stairs(x_bound, y_bound,
-                    width=60,
+                    width=input_size*2,
                     height=5,
-                    xlim=[0, 40],
+                    xlim=[0, input_size * 2],
                     ylim=[-1, 1],
                     border=:bold,
                     title="Manchester Encoding",
