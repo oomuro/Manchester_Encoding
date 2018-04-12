@@ -14,12 +14,12 @@ https://jupyter.nims.re.kr
 
 Don't forget to install UnicodePlots.jl, too.
 
-## After installing Julia 
+## After installing Julia
 Go to the project folder and run `julia --color=yes manchester.jl`
 
-If the program works successfully, it will tell you to type in 16-digit
+If the program works successfully, it will tell you to type in
 binary code, which you have to try again and again until the input
-becomes 16-digit code.
+becomes binary code.
 
 The result would be like the image below.
 

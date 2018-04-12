@@ -18,7 +18,7 @@ function manchester()
     man_0 = [1, 1, -1, -1]
     man_1 = [-1, -1, 1, 1]
 
-    for i in 1:16
+    for i in 1:input_size
         a = (temp + twos * (i - 1))
         append!(x_bound, a)
         if bit[i] == 0
@@ -62,7 +62,7 @@ function diff_manchester()
         global tmp = man_0
     end
 
-    for i in 2:16
+    for i in 2:input_size
         a = (temp + twos*(i-1))
         append!(x_bound, a)
         if bit[i] == 0
@@ -99,24 +99,28 @@ end
 
 function main()
     global input
+    global bit = Array{Int64, 1}()
 
     while true
-        print("\nPlease type in 16-bit code: ")
+        cnt = 0
+        bit = [0]
+        print("\nPlease type in binary code: ")
         input = readline()
-        if length(input) == 16
+        global input_size = length(input)
+        for i in 1:input_size
+            push!(bit, parse(Int64, input[i]))
+            if((bit[i] == 0) || (bit[i] == 1))
+                cnt += 1
+            end
+        end
+        if cnt == input_size
             break
         else
-            println("Not 16-bit! Please type in 16-bit code")
+            println("Not binary code! Please type in binary code")
         end
     end
 
     println()
-
-    global bit = Array{Int64, 1}()
-
-    for i in 1:16
-        push!(bit, parse(Int64, input[i]))
-    end
 
     manchester()
     diff_manchester()
