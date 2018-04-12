@@ -37,7 +37,7 @@ function manchester()
                     title="Manchester Encoding",
                     color=:red,
                     grid=false,
-                    canvas=DotCanvas);
+                    canvas=BrailleCanvas);
     print(man)
 end
 
@@ -93,7 +93,7 @@ function diff_manchester()
                     title="Differential Manchester Encoding",
                     color=:red,
                     grid=false,
-                    canvas=DotCanvas);
+                    canvas=BrailleCanvas);
     print(man)
 end
 
@@ -103,7 +103,7 @@ function main()
 
     while true
         cnt = 0
-        bit = [0]
+        bit = []
         print("\nPlease type in binary code: ")
         input = readline()
         global input_size = length(input)
@@ -120,7 +120,7 @@ function main()
         end
     end
 
-    println()
+    println("length is ", input_size)
 
     manchester()
     diff_manchester()
