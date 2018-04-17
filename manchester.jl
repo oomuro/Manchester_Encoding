@@ -29,7 +29,7 @@ function manchester()
     end
 
     man = stairs(x_bound, y_bound,
-                    width=input_size*2,
+                    width=input_size*3,
                     height=5,
                     xlim=[0, input_size * 2],
                     ylim=[-1, 1],
@@ -85,9 +85,9 @@ function diff_manchester()
     end
 
     man = stairs(x_bound, y_bound,
-                    width=60,
+                    width=input_size*3,
                     height=5,
-                    xlim=[0,40],
+                    xlim=[0, input_size * 2],
                     ylim=[-1,1],
                     border=:bold,
                     title="Differential Manchester Encoding",
@@ -120,7 +120,7 @@ function main()
         end
     end
 
-    println("length is ", input_size)
+    println()
 
     manchester()
     diff_manchester()
